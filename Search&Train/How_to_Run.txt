@@ -1,0 +1,5 @@
+1. Search stage: python search.py --gpus 0 --name HR6 --batch_size 32 --layers 6 
+2. Train stage: python augment.py --gpus 0 --name HR6 --batch_size 64 --layers 6 --genotype "......."
+
+
+We will gradually improve the quality of the open source code, and give more details in https://github.com/LuPaoPao/NAS-HR
