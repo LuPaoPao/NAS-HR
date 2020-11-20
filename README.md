@@ -1,10 +1,16 @@
 # NAS-HR
 A heart rate estimation approach to automatically search a lightweight network that can achieve even higher accuracy than a complex network while reducing the computational cost.
 
+----------------------------------------------------------------------------------------
+****************************************************************************************
+----------------------------------------------------------------------------------------
 File "POS_STMap" give the calculation process of POS-STMap,
 
 File "Search&Train" give the searching and training process.
 
+----------------------------------------------------------------------------------------
+****************************************************************************************
+----------------------------------------------------------------------------------------
 How to Run?
 
 1. Get VIPL-HR from http://vipl.ict.ac.cn/view_database.php?id=15.
@@ -16,8 +22,9 @@ How to Run?
 4. Search a efficient and lightweight CNN by the code "search.py" in File "Search&Train".
 
 5. Train the searched CNN by the code "augment.py" in File "Search&Train".
-
-
+----------------------------------------------------------------------------------------
+****************************************************************************************
+----------------------------------------------------------------------------------------
 
 The part of NAS is based on DARTS framework from https://github.com/khanrc/pt.darts.
 
