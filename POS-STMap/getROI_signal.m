@@ -1,16 +1,6 @@
 function [ signals ] = getROI_signal(frame,landmarks)
 %UNTITLED3 此处显示有关此函数的摘要
 %   此处显示详细说明
-R = frame(:,:,1);
-G = frame(:,:,2);
-B = frame(:,:,3);
-%Conversion Formula
-Y = 0.299 * R + 0.587 * G + 0.114 * B;
-U =128 - 0.168736 * R - 0.331264 * G + 0.5 * B;
-V =128 + 0.5 * R - 0.418688 * G - 0.081312 * B;
-frame(:,:,1) = Y;
-frame(:,:,2) = U;
-frame(:,:,3) = V;
 
 ROI = zeros(14,3);
 signals = zeros(1,45);
@@ -41,16 +31,6 @@ for ROI_Index = 1:14
     BW=uint8(roipoly(frame,ROI(ROI_Index,1:3),ROI(ROI_Index,4:6)));%生成掩膜图像BW1，使得BW1格式与Image0一致。
 %     subplot(3,2,1),imshow(BW*255); 
     numpix = sum(sum(BW));
-    R = frame(:,:,1);
-    G = frame(:,:,2);
-    B = frame(:,:,3);
-    %Conversion Formula
-    Y = 0.299 * R + 0.587 * G + 0.114 * B;
-    U =128 - 0.168736 * R - 0.331264 * G + 0.5 * B;
-    V =128 + 0.5 * R - 0.418688 * G - 0.081312 * B;
-    frame(:,:,1)=Y;
-    frame(:,:,2)=U;
-    frame(:,:,3)=V;
     for i =1:3
        imgROI=squeeze(frame(:,:,i)).*BW;%将Image0图像提取ROI，其余部分归零
 %        subplot(3,2,i+2),imshow(imgROI); 
